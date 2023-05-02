@@ -10,9 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_01_135826) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_02_165133) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "planners", force: :cascade do |t|
+    t.string "name"
+    t.float "rating"
+    t.text "description"
+    t.string "short_description"
+    t.string "price_range"
+    t.bigint "user_id", null: false
+    t.float "latitude"
+    t.float "longitude"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "services", default: [], array: true
+    t.index ["user_id"], name: "index_planners_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -28,4 +43,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_01_135826) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "planners", "users"
 end
