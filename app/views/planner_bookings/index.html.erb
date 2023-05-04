@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Planner bookings</h1>
+
+<div id="planner_bookings">
+  <% @planner_bookings.each do |planner_booking| %>
+    <%= render planner_booking %>
+    <p>
+      <%= link_to "Show this planner booking", planner_booking %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New planner booking", new_planner_booking_path %>
