@@ -76,4 +76,4 @@ group :test do
   gem "webdrivers"
 end
 gem "devise"
-gem "autoprefixer-rails"
+gem "pundit"
