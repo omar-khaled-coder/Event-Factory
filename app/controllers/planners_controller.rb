@@ -63,8 +63,10 @@ class PlannersController < ApplicationController
       @planner = Planner.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
+  # Only allow a list of trusted parameters through.
+
   def planner_params
-    params.require(:planner).permit(:name, :rating, :description, :short_description, :price_range, :user_id, :latitude, :longitude, services: [])
+    params.require(:planner).permit(:name, :rating, :description, :short_description,
+                                    :price_range, :user_id, :latitude, :longitude, project_photos: [])
   end
 end
