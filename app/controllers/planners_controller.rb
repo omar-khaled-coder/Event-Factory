@@ -8,6 +8,8 @@ class PlannersController < ApplicationController
 
   # GET /planners/1 or /planners/1.json
   def show
+    @planners = Planner.find(params[:id])
+
   end
 
   # GET /planners/new
