@@ -8,6 +8,8 @@ class PlannerBookingsController < ApplicationController
 
   # GET /planner_bookings/1 or /planner_bookings/1.json
   def show
+    @planner_booking = PlannerBooking.find(params[:id])
+    @planner = Planner.find(params[:listing_id])
   end
 
   # GET /planner_bookings/new
