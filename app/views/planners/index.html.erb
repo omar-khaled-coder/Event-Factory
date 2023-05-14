@@ -1,14 +1,54 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Planners</h1>
+<div class="container-fluid px-10">
 
-<div id="planners">
-  <% @planners.each do |planner| %>
-    <%= render planner %>
-    <p>
-      <%= link_to "Show this planner", planner %>
-    </p>
-  <% end %>
+    <h1 class="title px-4">Wedding Halls</h1>
+
+  <div class="row gx-5 gy-5 d-flex px-4">
+
+            <% @planners.each do |planner| %>
+
+            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 card-listing">
+              <%# <%= render listing %>
+              <%= link_to planner_path(planner), class:"text-decoration-none" do %>
+                <div class="cards-container" id="carouselExampleCaptions" class="carousel slide">
+
+                <div class="hover-card">
+                  <% if planner.photos.attached? %>
+                    <%= cl_image_tag listing.photos.first.key, class: "image" %>
+                  <% else %>
+                    <%= image_tag "wedding-ceremony-reception-celebration-romantic.jpg", class: "image" %>
+                  <% end %>
+                  <p class="hidden-text" style="color:white;"><%= listing.short_description %></p>
+                </div>
+
+
+                  <div class="card-description">
+                    <h3 class="card-title space pt-2"><%=listing.name %></h3>
+                  </div>
+
+                  <div class="card-details justifiy-content-start">
+                    <p class="card-info space"><%=listing.duration%> hour</p>
+                    <p class="card-info space"><%=listing.capacity%> people</p>
+                  </div>
+
+                  <div class="card-details justifiy-content-end">
+                    <p class="card-price space" style="color: black;">£ <%=listing.price %></p>
+                    <p class="card-title space" style="color: black;"><%=listing.rating%> <i class="fas fa-star" style="color: black;"></i></p>
+                  </div>
+                  <%# <p>
+                    <%= link_to "Show this listing", listing %>
+                  <%# </p> %>
+
+                </div>
+
+
+
+              <% end %>
+            </div>
+          <% end %>
+
+
+        <%= link_to "New listing", new_listing_path %>
+  </div>
 </div>
-
-<%= link_to "New planner", new_planner_path %>
