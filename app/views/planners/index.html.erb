@@ -14,27 +14,27 @@
                 <div class="cards-container" id="carouselExampleCaptions" class="carousel slide">
 
                 <div class="hover-card">
-                  <% if planner.photos.attached? %>
-                    <%= cl_image_tag listing.photos.first.key, class: "image" %>
+                  <% if planner.project_photos.attached? %>
+                    <%= cl_image_tag planner.project_photos.first.key, class: "image" %>
                   <% else %>
                     <%= image_tag "wedding-ceremony-reception-celebration-romantic.jpg", class: "image" %>
                   <% end %>
-                  <p class="hidden-text" style="color:white;"><%= listing.short_description %></p>
+                  <p class="hidden-text" style="color:white;"><%= planner.short_description %></p>
                 </div>
 
 
                   <div class="card-description">
-                    <h3 class="card-title space pt-2"><%=listing.name %></h3>
+                    <h3 class="card-title space pt-2"><%=planner.name %></h3>
                   </div>
 
                   <div class="card-details justifiy-content-start">
-                    <p class="card-info space"><%=listing.duration%> hour</p>
-                    <p class="card-info space"><%=listing.capacity%> people</p>
+                    <%# <p class="card-info space"><%=listing.duration hour</p> %>
+                    <%# <p class="card-info space"><%=listing.capacity people</p>  %>
                   </div>
 
                   <div class="card-details justifiy-content-end">
-                    <p class="card-price space" style="color: black;">£ <%=listing.price %></p>
-                    <p class="card-title space" style="color: black;"><%=listing.rating%> <i class="fas fa-star" style="color: black;"></i></p>
+                    <p class="card-price space" style="color: black;">£ <%=planner.price_range %></p>
+                    <p class="card-title space" style="color: black;"><%=planner.rating%> <i class="fas fa-star" style="color: black;"></i></p>
                   </div>
                   <%# <p>
                     <%= link_to "Show this listing", listing %>
@@ -49,6 +49,6 @@
           <% end %>
 
 
-        <%= link_to "New listing", new_listing_path %>
+        <%= link_to "New planner", new_planner_path %>
   </div>
 </div>
