@@ -4,4 +4,7 @@ class Planner < ApplicationRecord
   has_many :users, through: :bookings
   has_many_attached :project_photos
   has_many :chatrooms
+  has_many :messages
+  has_many :users, through: :chatrooms
+  has_one_attached :profile_photo
 end
