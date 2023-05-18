@@ -14,8 +14,8 @@
                 <div class="cards-container" id="carouselExampleCaptions" class="carousel slide">
 
                   <div class="hover-card">
-                    <% if planner.project_photos.attached? %>
-                      <%= cl_image_tag planner.project_photos.first.key, class: "image" %>
+                    <% if planner.photos.attached? %>
+                      <%= cl_image_tag planner.photos.first.key, class: "image" %>
                     <% else %>
                       <%= image_tag "wedding-ceremony-reception-celebration-romantic.jpg", class: "image" %>
                     <% end %>
