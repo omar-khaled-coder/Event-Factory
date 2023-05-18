@@ -27,7 +27,7 @@ class PlannersController < ApplicationController
 
     respond_to do |format|
       if @planner.save
-        format.html { redirect_to planner_url(@planner), notice: "Planner was successfully created." }
+        format.html { redirect_to @planner, notice: "Planner was successfully created." }
         format.json { render :show, status: :created, location: @planner }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -35,6 +35,7 @@ class PlannersController < ApplicationController
       end
     end
   end
+
 
   # PATCH/PUT /planners/1 or /planners/1.json
   def update
