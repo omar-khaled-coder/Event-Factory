@@ -1,5 +1,5 @@
 class PlannersController < ApplicationController
-  before_action :set_planner, only: %i[ show edit update destroy ]
+  before_action :set_planner, only: %i[show edit update destroy]
 
   # GET /planners or /planners.json
   def index
@@ -9,7 +9,6 @@ class PlannersController < ApplicationController
   # GET /planners/1 or /planners/1.json
   def show
     @planners = Planner.find(params[:id])
-
   end
 
   # GET /planners/new
@@ -38,6 +37,7 @@ class PlannersController < ApplicationController
 
 
   # PATCH/PUT /planners/1 or /planners/1.json
+
   def update
     respond_to do |format|
       if @planner.update(planner_params)
@@ -61,15 +61,16 @@ class PlannersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_planner
-      @planner = Planner.find(params[:id])
-    end
+
+  # Use callbacks to share common setup or constraints between actions.
+  def set_planner
+    @planner = Planner.find(params[:id])
+  end
 
   # Only allow a list of trusted parameters through.
 
   def planner_params
     params.require(:planner).permit(:name, :rating, :description, :short_description, :profile_photo,
-                                    :price_range, :user_id, :latitude, :longitude, photos: [])
+                                    :price_range, :user_id, :latitude, :longitude, photos:[])
   end
 end
