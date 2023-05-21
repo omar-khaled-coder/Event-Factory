@@ -19,17 +19,18 @@
                     <% else %>
                       <%= image_tag "wedding-ceremony-reception-celebration-romantic.jpg", class: "image" %>
                     <% end %>
-                    <p class="hidden-text" style="color:white;"><%= planner.short_description %></p>
+                    <p class="hidden-text" style="color:white;"><%= cl_image_tag planner.profile_photo.key, class: "avatar dropdown-toggle"%></p>
                   </div>
 
 
                   <div class="card-description">
-                  <%# <%= cl_image_tag planner.profile_photo.key,height: 41, width: 50, crop: :fill, class: "avatar dropdown-toggle"%>
                     <h3 class="card-title space pt-2"><%=planner.name %></h3>
                   </div>
 
                   <div class="card-details justifiy-content-start">
                     <%# <p class="card-info space"><%=listing.duration hour</p> %>
+                    <%= planner.short_description%>
+
                   </div>
 
                   <div class="card-details justifiy-content-end">
