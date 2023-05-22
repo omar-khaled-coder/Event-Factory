@@ -35,7 +35,6 @@ class PlannersController < ApplicationController
     end
   end
 
-
   # PATCH/PUT /planners/1 or /planners/1.json
 
   def update
