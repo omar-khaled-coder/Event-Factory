@@ -1,4 +1,16 @@
-<div id="<%= dom_id planner %>">
+<div class="container px-0" id="<%= dom_id planner %>">
+
+  <legend class="style-legend">
+      <a href="javascript:history.back()"><span class="greyed-out">planners</span></a>
+      <span class="greyed-in">> </span></a>
+      <span class="greyed-in"><%= planner.name %></span></a>
+      <span class="greyed-inactive">> Payment</span>
+
+      <p>
+        <%= planner.short_description %>
+      </p>
+    </legend>
+
   <p>
     <strong>Name:</strong>
     <%= planner.name %>
