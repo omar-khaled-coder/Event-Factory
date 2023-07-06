@@ -7,4 +7,5 @@ class Planner < ApplicationRecord
   has_many :messages
   has_many :users, through: :chatrooms
   has_one_attached :profile_photo
+  geocoded_by :citys
 end
