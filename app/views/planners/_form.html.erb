@@ -11,7 +11,7 @@
     <%= f.input :description %>
     <%= f.input :short_description %>
     <%= f.input :price_range %>
-    <%= f.input :services, as: :text, input_html: { rows: 3 }, label: 'Services (separated by commas)' %>
+    <%= f.input :services, as: :text, input_html: { multiple: true }, label: 'Services (separated by commas)' %>
     <%= f.association :user %>
     <%= f.input :latitude %>
     <%= f.input :longitude %>
