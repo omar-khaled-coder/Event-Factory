@@ -70,6 +70,9 @@ class PlannersController < ApplicationController
 
   def planner_params
     params.require(:planner).permit(:name, :rating, :description, :short_description, :profile_photo,
-                                    :price_range, :user_id, :latitude, :longitude, photos:[], services:[])
+                                    :price_range, :user_id, :latitude, :longitude, photos: [], services: [])
   end
+
+
+
 end
